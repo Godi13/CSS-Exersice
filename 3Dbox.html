@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D</title>
+  <style>
+    .container {
+      margin: 160px auto 0 auto;
+      width: 160px;
+      height: 160px;
+    }
+    .box {
+      transform-style: preserve-3d;
+      transform-origin: 80px 80px 0;
+      /* perspective-origin: 300px -300px; */
+      /* perspective: 3000px; */
+      animation: animation 3s ease-in-out infinite;
+    }
+
+    @keyframes animation
+    {
+      16%{transform: rotateY(-90deg);}
+      33%{transform: rotateY(-90deg) rotateZ(135deg);}
+      50%{transform: rotateY(225deg) rotateZ(135deg);}
+      66%{transform: rotateY(135deg) rotateZ(135deg);}
+      83%{transform: rotateX(135deg);}
+    }
+
+    .box div {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background: gold;
+      font-size: 130px;
+      text-align: center;
+      border: 3px solid #333;
+      /* opacity: .7; */
+    }
+    .first {
+      transform: translateZ(80px);
+    }
+    .second {
+      transform: rotateY(90deg) translateZ(80px);
+    }
+    .third {
+      transform: rotateX(90deg) rotateZ(-90deg) translateZ(80px);
+    }
+    .fourth {
+      transform: rotateY(-90deg)  rotateZ(180deg)  translateZ(80px);
+    }
+    .fiveth {
+      transform: rotateZ(180deg) rotateY(180deg) translateZ(80px);
+    }
+    .sixth {
+      transform: rotateX(270deg) translateZ(80px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="first">1</div>
+      <div class="second">2</div>
+      <div class="third">3</div>
+      <div class="fourth">4</div>
+      <div class="fiveth">5</div>
+      <div class="sixth">6</div>
+    </div>
+  </div>
+</body>
+</html>
